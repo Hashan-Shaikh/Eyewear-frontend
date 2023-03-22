@@ -1,0 +1,13 @@
+.btn1{
+    margin-left: 27px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.btn2{
+   padding: 5px; 
+}
+.btn3{
+    margin-top: 5vh;
+    margin-left: 45vw ;
+}
