@@ -23,6 +23,12 @@ const ShopOwnerHomePage = () => {
     const addProdHandler = () => {
         history('/shop-owner/add-prod');
     }
+    const updateProdHandler = () => {
+        history('/shop-owner/update-prod');
+    }
+    const deleteShopHandler = () => {
+        history('/shop-owner/delete-prod');
+    }
 
     return (<ShopProtected>
         <ShopNavBar />
@@ -55,7 +61,7 @@ const ShopOwnerHomePage = () => {
                     <Card.Text>
                         Update Frames to your shops!
                     </Card.Text>
-                    <Button variant="primary">Update</Button>
+                    <Button variant="primary" onClick={updateProdHandler}>Update</Button>
                 </Card.Body>
             </Card>
             <Card style={{ width: '18rem', padding: '30px' }}>
@@ -65,7 +71,7 @@ const ShopOwnerHomePage = () => {
                     <Card.Text>
                         Delete Frames to your shops!
                     </Card.Text>
-                    <Button variant="primary">Delete</Button>
+                    <Button variant="primary" onClick={deleteShopHandler}>Delete</Button>
                 </Card.Body>
             </Card>
         </Card>

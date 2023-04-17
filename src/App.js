@@ -17,6 +17,8 @@ const ShopOwnerLoginPage = React.lazy(() => import('./pages/ShopOwnerLoginPage')
 const ShopOwnerHomePage = React.lazy(() => import('./pages/ShopOwnerHomePage'));
 const ViewShopProdsPage = React.lazy(() => import('./pages/ViewShopProdsPage'));
 const AddProdToShopePage = React.lazy(() => import('./pages/AddProdToShopePage'));
+const UpdateProdPage = React.lazy(() => import('./pages/UpdateProdPage'));
+const DeleteProdPage = React.lazy(() => import('./pages/DeleteProdPage'));
 function App() {
   return (
     <>
@@ -33,6 +35,8 @@ function App() {
           <Route path='/shop-owner/home' element={<React.Suspense fallback={<>...</>}><ShopOwnerHomePage /></React.Suspense>} />
           <Route path='/shop-owner/view-store' element={<React.Suspense fallback={<>...</>}><ViewShopProdsPage /></React.Suspense>} />
           <Route path='/shop-owner/add-prod' element={<React.Suspense fallback={<>...</>}><AddProdToShopePage /></React.Suspense>} />
+          <Route path='/shop-owner/update-prod' element={<React.Suspense fallback={<>...</>}><UpdateProdPage /></React.Suspense>} />
+          <Route path='/shop-owner/delete-prod' element={<React.Suspense fallback={<>...</>}><DeleteProdPage /></React.Suspense>} />
         </Routes>
       </main>
       {/* <footer>
