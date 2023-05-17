@@ -1,0 +1,146 @@
+{
+    "intents": [
+        {
+            "tag": "name",
+            "patterns": [
+                "What is your name?",
+                "Who are you?",
+                "Who am I talking?",
+                "Who is this?"
+            ],
+            "responses":[
+                "I am Dexter!",
+                "I am Dexter, the chatbot!",
+                "Chatbot here!"
+            ]
+        },
+        {            
+            "tag": "greeting",
+            "patterns": [
+                "hi",
+                "Hey",
+                "How are you?",
+                "Anyone there?",
+                "Hello",
+                "yo",
+                "Good day"
+            ],
+            "responses": [
+                "Hey :)",
+                "Hello, thanks for visiting",
+                "Hi, what can I do for you?",
+                "Hey there, how can I help you?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Bi"
+            ],
+            "responses": [
+                "See you later, thanks for visiting",
+                "Have a nice day",
+                "Bye! Come back soon"
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks", "Thank you", "That's helpful", "Thanks alot!"
+            ],
+            "responses": [
+                "Happy to help", "Anytime", "My pleasure"
+            ]
+        },
+        {
+            "tag": "item",
+            "patterns": [
+                "Which items do you have?",
+                "What kinds of items are there?",
+                "What do you sell?"
+            ],
+            "responses": [
+                "We are an EyeWear E-commerce store",
+                "We have glasses and sunglasses that you can virtually try on!",
+                "We have all items you would expect from an Eye store ;)",
+                "Apart from eyewear items, we have eye-test Machine Learning models!"
+            ]
+        },
+        {
+            "tag": "model",
+            "patterns": [
+                "Where can I test my eyes?",
+                "How to check for eye disease?",
+                "Where is the eye testing model?",
+                "Where is the deep learning model?",
+                "How do I get my eyes checked?",
+                "Do you have eye check up?"
+            ],
+            "responses": [
+                "You may visit the Eye disease classification model on the top left of this page."
+            ]
+        },
+        {
+            "tag": "contact",
+            "patterns": [
+                "How do I contact you?",
+                "Where can I contact you?",
+                "Can you talk to your customer support?",
+                "What is your support line?",
+                "Do you have a contact number?",
+                "I want to talk to support"
+
+            ],
+            "responses": [
+                "You may call on 03129081234",
+                "You may email us at dexter@gmail.com",
+                "You can visit our customer support office at any time"
+            ]
+
+        },
+        {
+            "tag": "payments",
+            "patterns": [
+                "Do you take credit card?",
+                "Do you take cash?",
+                "Do you accept MasterCard?",
+                "Can I pay with PayPal?",
+                "Are you cash only?"
+            ],
+            "responses": [
+                "We accept Visa, Mastercard, and PayPal",
+                "We accept all major credit cards and PayPal",
+                "You may pay with your credit card"
+            ]
+        },
+        {
+            "tag": "delivery",
+            "patterns": [
+                "How long does delivery take?",
+                "How long for shipping?",
+                "When do I get my order?",
+                "Do you deliver?"
+            ],
+            "responses": [
+                "Delivery takes 2-4 days",
+                "Shipping takes 2-4 days",
+                "Delivery can be done within a few days"
+            ]
+        },
+        {
+            "tag": "funny",
+            "patterns": [
+                "Tell me a joke!",
+                "Tell me something funny",
+                "Do you know any joke?"
+            ],
+            "responses": [
+                "You",
+                "No"
+            ]
+        }
+    ]
+}
