@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import './AdminLoginPage.css';
 import axios from 'axios';
 import { useState } from "react";
+import './DeleteShopPage.css'
+import AdminNavBar from "../UI/AdminNavBar";
 
 const DeleteShopPage = (props) => {
     const [email, setEmail] = useState('');
@@ -28,17 +30,37 @@ const DeleteShopPage = (props) => {
         }
     }
 
-    return (<AdminProtected>
-        <Form className='form-style' onSubmit={deleteRequest}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className='form-label'>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Delete
-            </Button>
-        </Form>
-    </AdminProtected>)
+    // return (<AdminProtected>
+    //     <Form className='form-style' onSubmit={deleteRequest}>
+    //         <Form.Group className="mb-3" controlId="formBasicEmail">
+    //             <Form.Label className='form-label'>Email address</Form.Label>
+    //             <Form.Control type="email" placeholder="Enter email" value={email}
+    //                 onChange={(e) => setEmail(e.target.value)} />
+    //         </Form.Group>
+    //         <Button variant="primary" type="submit">
+    //             Delete
+    //         </Button>
+    //     </Form>
+    // </AdminProtected>)
+    return (
+        <AdminProtected>
+            <AdminNavBar />
+            <Form className="form-style delete-form" onSubmit={deleteRequest}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label className="form-label">Email address</Form.Label>
+                    <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </Form.Group>
+                <Button className="delete-btn" type="submit">
+                    Delete
+                </Button>
+            </Form>
+        </AdminProtected>
+    );
+
 }
 export default DeleteShopPage;

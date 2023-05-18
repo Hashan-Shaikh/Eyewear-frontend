@@ -1,0 +1,64 @@
+.form-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ecf5ed;
+    border-radius: 10px;
+  }
+  
+  .form-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #8c8c8c;
+    box-shadow: 0 0 5px #8c8c8c;
+  }
+  
+  /* .btn-primary {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #449d44;
+  } */
+  .delete-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .delete-btn:hover{
+    background-color: #449d44;
+  }
+  

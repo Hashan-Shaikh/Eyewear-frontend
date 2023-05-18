@@ -21,8 +21,11 @@ const Navbar = () => {
                         <h1 className='logo'>EyeWear.pk</h1>
                     </div>
                     <div className='Right'>
+                        <div className='MenuItem'><Link to="/chat">Chatbot</Link></div>
+                        <div className='MenuItem'><Link to="/checkup">EyeCheckup</Link></div>
                         <div className='MenuItem'><Link to="/admin">Admin</Link></div>
                         <div className='MenuItem'><Link to="/shop-owner">ShopOwner</Link></div>
+                        <div className='MenuItem'><Link to="/customer">Customer</Link></div>
                         <div className='MenuItem'>
                             <BsFillCartFill />
                         </div>

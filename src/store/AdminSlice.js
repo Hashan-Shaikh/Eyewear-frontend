@@ -35,6 +35,7 @@ const authenticateAdmin = () => {
     }
 }
 
+
 export const AdminActions = AdminSlice.actions;
 export const AuthenticateAdmin = authenticateAdmin;
 export const AdminReducer = AdminSlice.reducer;

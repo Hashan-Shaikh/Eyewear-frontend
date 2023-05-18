@@ -7,9 +7,11 @@ import Spinner from 'react-bootstrap/Spinner';
 const ShopProtected = (props) => {
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         dispatch(AuthenticateShop());
     }, [dispatch]);
+
 
     const isLoggedIn = useSelector(state => state.shop.isLoggedIn);
     const isLoading = useSelector(state => state.shop.isLoading);

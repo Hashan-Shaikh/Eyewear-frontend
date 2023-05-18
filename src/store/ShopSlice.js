@@ -12,11 +12,13 @@ const ShopSlice = createSlice({
             state.isLoggedIn = true;
             state.isLoading = false;
             state._id = action.payload;
+            localStorage.setItem('shop_id', action.payload)
         },
-        logout(state) {
+        logout(state, action) {
             state.isLoggedIn = false;
             state.isLoading = false;
             state._id = null;
+            localStorage.removeItem('shop_id', action.payload)
         },
     }
 });

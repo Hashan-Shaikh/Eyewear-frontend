@@ -9,6 +9,8 @@ import { useState } from "react";
 //import AdminNavBar from "../UI/AdminNavBar";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import ShopNavBar from '../UI/ShopNavBar';
+import './AddProdToShopPage.css';
 
 const DeleteProdPage = () => {
     const [prodName, setProd] = useState('');
@@ -27,14 +29,15 @@ const DeleteProdPage = () => {
     }
     return (
         <ShopProtected>
-            <Form onSubmit={deleteProd}>
+            <ShopNavBar />
+            <Form className="form-container-11" onSubmit={deleteProd}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Product name</Form.Label>
+                    <Form.Label className="form-label-11">Product name</Form.Label>
                     <Form.Control type="n" placeholder="n" value={prodName}
                         onChange={(n) => setProd(n.target.value)} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button className="submit-btn-11" variant="primary" type="submit">
                     DeleteProd
                 </Button>
             </Form>

@@ -9,6 +9,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import ShopNavBar from '../UI/ShopNavBar';
+import ShopProtected from '../components/ShopProtected';
+import '../components/MuiTShopTable.css';
 
 const ViewShopProdsPage = () => {
     const [shopProd, setShopProd] = useState();
@@ -34,29 +37,32 @@ const ViewShopProdsPage = () => {
         findProds();
     }, [])
     return (
-        <TableContainer component={Paper}>
-            <Table>
-                <TableHead aria-label='simple table'>
-                    <TableRow>
-                        <TableCell>Product</TableCell>
-                        <TableCell>Quantity</TableCell>
-                        <TableCell>Per Unit Price</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {
-                        shopProd && shopProd.map((prod) => (
-                            <TableRow
-                                key={prod._id}>
-                                <TableCell>{prod.prod_name}</TableCell>
-                                <TableCell>{prod.quan}</TableCell>
-                                <TableCell>{prod.unit_price}</TableCell>
-                            </TableRow>
-                        ))
-                    }
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <ShopProtected>
+            <ShopNavBar />
+            <div className='table-container'>
+                <Table className='table'>
+                    <thead aria-label='simple table'>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Per Unit Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            shopProd && shopProd.map((prod) => (
+                                <tr
+                                    key={prod._id}>
+                                    <td>{prod.prod_name}</td>
+                                    <td>{prod.quan}</td>
+                                    <td>{prod.unit_price}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
+        </ShopProtected>
     )
 }
 

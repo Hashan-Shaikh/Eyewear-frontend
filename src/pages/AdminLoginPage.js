@@ -37,19 +37,19 @@ function AdminLoginForm() {
 
   return (<>
     <AdminNavBar />
-    <Form className='form-style' onSubmit={sendRequest}>
+    <Form className='form-container-1' onSubmit={sendRequest}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className='form-label'>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" value={email}
+        <Form.Label className='form-label-1'>Email address</Form.Label>
+        <Form.Control className='form-control-1' type="email" placeholder="Enter email" value={email}
           onChange={(e) => setEmail(e.target.value)} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label className='form-label'>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" value={password}
+        <Form.Label className='form-label-1'>Password</Form.Label>
+        <Form.Control className='form-control-1' type="password" placeholder="Password" value={password}
           onChange={(p) => setPassword(p.target.value)} />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button className='submit-btn-1' type="submit">
         Login
       </Button>
     </Form>
