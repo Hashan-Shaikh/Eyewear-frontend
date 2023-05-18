@@ -7,6 +7,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 //import DeleteShopPage from './pages/DeleteShopPage';
 //import Footer from './UI/Footer';
 import React from 'react';
+import ChatWindow from './pages/ChatWindow';
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 const AdminHomePage = React.lazy(() => import('./pages/AdminHomePage'));
 const RegisterShopPage = React.lazy(() => import('./pages/RegisterShopPage'));
@@ -19,6 +20,12 @@ const ViewShopProdsPage = React.lazy(() => import('./pages/ViewShopProdsPage'));
 const AddProdToShopePage = React.lazy(() => import('./pages/AddProdToShopePage'));
 const UpdateProdPage = React.lazy(() => import('./pages/UpdateProdPage'));
 const DeleteProdPage = React.lazy(() => import('./pages/DeleteProdPage'));
+const CustomerLoginPage = React.lazy(() => import('./pages/CustomerLoginPage'));
+const CustomerHomePage = React.lazy(() => import('./pages/CustomerHomePage'));
+const CustomerMenu = React.lazy(() => import('./pages/CustomerMenu'));
+const CustomerCheckout = React.lazy(() => import('./pages/CustomerCheckoutPage'));
+const EyeCheck = React.lazy(() => import('./pages/EyeCheck'));
+const Chatbot = React.lazy(() => import('./pages/ChatWindow'));
 function App() {
   return (
     <>
@@ -37,6 +44,12 @@ function App() {
           <Route path='/shop-owner/add-prod' element={<React.Suspense fallback={<>...</>}><AddProdToShopePage /></React.Suspense>} />
           <Route path='/shop-owner/update-prod' element={<React.Suspense fallback={<>...</>}><UpdateProdPage /></React.Suspense>} />
           <Route path='/shop-owner/delete-prod' element={<React.Suspense fallback={<>...</>}><DeleteProdPage /></React.Suspense>} />
+          <Route path='/customer' element={<React.Suspense fallback={<>...</>}><CustomerLoginPage /></React.Suspense>} />
+          <Route path='/customer/home' element={<React.Suspense fallback={<>...</>}><CustomerHomePage /></React.Suspense>} />
+          <Route path='/customer/shop' element={<React.Suspense fallback={<>...</>}><CustomerMenu /></React.Suspense>} />
+          <Route path='/customer/checkout' element={<React.Suspense fallback={<>...</>}><CustomerCheckout /></React.Suspense>} />
+          <Route path='/checkup' element={<React.Suspense fallback={<>...</>}><EyeCheck /></React.Suspense>} />
+          <Route path='/chat' element={<React.Suspense fallback={<>...</>}><ChatWindow /></React.Suspense>} />
         </Routes>
       </main>
       {/* <footer>

@@ -6,6 +6,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import AdminNavBar from "../UI/AdminNavBar";
+import './UpdateShopPage.css'
+
 
 
 const UpdateShopPage = () => {
@@ -36,7 +38,7 @@ const UpdateShopPage = () => {
 
     return (<>
         <AdminNavBar />
-        <AdminProtected>
+        {/* <AdminProtected>
             <Form onSubmit={submitShop}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Enter Id</Form.Label>
@@ -72,7 +74,70 @@ const UpdateShopPage = () => {
                     UpdateShop
                 </Button>
             </Form>
+        </AdminProtected> */}
+        <AdminProtected>
+            <Form onSubmit={submitShop} className="form-container-12">
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label className="form-label-12">Enter Id</Form.Label>
+                    <Form.Control
+                        type="id"
+                        placeholder="id"
+                        value={id}
+                        onChange={(i) => setId(i.target.value)}
+                        className="form-control-12"
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label className="form-label-12">Name</Form.Label>
+                    <Form.Control
+                        type="name"
+                        placeholder="name"
+                        value={name}
+                        onChange={(n) => setName(n.target.value)}
+                        className="form-control-12"
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label className="form-label-12">Email</Form.Label>
+                    <Form.Control
+                        type="email"
+                        placeholder="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="form-control-12"
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label className="form-label-12">Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(p) => setPassword(p.target.value)}
+                        className="form-control-12"
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label className="form-label-12">Location</Form.Label>
+                    <Form.Control
+                        type="location"
+                        placeholder="location"
+                        value={location}
+                        onChange={(l) => setLocation(l.target.value)}
+                        className="form-control-12"
+                    />
+                </Form.Group>
+
+                <Button type="submit" className="submit-btn-12">
+                    UpdateShop
+                </Button>
+            </Form>
         </AdminProtected>
+
     </>
     )
 }

@@ -1,48 +1,54 @@
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { ShopActions } from '../store/ShopSlice';
+import { CustomerActions } from '../store/CustomerSlice';
 import { BsFillCartFill, BsSearch } from "react-icons/bs";
 import '../UI/NavBar.css';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 
-function ShopNavBar() {
-    const isLoggedIn = useSelector(state => state.shop.isLoggedIn);
+function CustomerNavBar() {
+    const isLoggedIn = useSelector(state => state.customer.isLoggedIn);
     const history = useNavigate();
     const dispatch = useDispatch();
-    const [shop, setShop] = useState()
+    const [customer, setCustomer] = useState('')
     const logoutHandler = async () => {
-        const res = await axios.post('http://localhost:3000/api/shop/logout', {
+        const res = await axios.post('http://localhost:3000/api/customer/logout', {
             withCredentials: true
         });
         if (res.status === 200) {
-            dispatch(ShopActions.logout());
-            history('/shop-owner');
+            dispatch(CustomerActions.logout());
+            // setCustomer()
+            history('/home');
             window.alert("successfull logout");
         }
     }
+    const cartHandler = () => {
+        history('/customer/checkout')
+    }
 
-    async function getShop() {
+
+    async function getCustomer() {
         try {
-            const shop_id = localStorage.getItem('shop_id')
-            const res = await axios.get(`http://localhost:3000/api/shop/${shop_id}`, {
-                withCredentials: true
-            });
-            const shop = res.data.shop
-            return shop;
-
+            const customer_id = localStorage.getItem('customer_id')
+            if (customer_id != null) {
+                const res = await axios.get(`http://localhost:3000/api/customer/${customer_id}`, {
+                    withCredentials: true
+                });
+                const customer = res.data.customer
+                return customer;
+            }
         } catch (err) {
             console.log(err.message);
         }
     }
     useEffect(() => {
-        const findShop = async () => {
-            const shop = await getShop();
-            setShop(shop);
+        const findCustomer = async () => {
+            const customer = await getCustomer();
+            setCustomer(customer);
         }
-        findShop();
+        findCustomer();
     }, [])
 
 
@@ -64,15 +70,15 @@ function ShopNavBar() {
                         <h1 className='logo'>EyeWear.pk</h1>
                     </div>
                     <div className='Right'>
-                        <div>{shop && shop.map(s => {
+                        <div>{customer && customer.map(c => {
                             return (
-                                <div key={s._id}>wallet: ${s.wallet}</div>
+                                <div key={c._id}>wallet: ${c.wallet}</div>
                             )
                         })}</div>
                         {!isLoggedIn && <div className='MenuItem'><Link to='/home'>Home</Link></div>}
-                        {isLoggedIn && <div className='MenuItem'><Link to='/admin' onClick={logoutHandler}>LogOut</Link></div>}
+                        {isLoggedIn && <div className='MenuItem'><Link to='/customer' onClick={logoutHandler}>LogOut</Link></div>}
                         <div className='MenuItem'>
-                            <BsFillCartFill />
+                            <BsFillCartFill onClick={cartHandler} />
                         </div>
                     </div>
                 </div>
@@ -81,4 +87,4 @@ function ShopNavBar() {
     );
 }
 
-export default ShopNavBar;
+export default CustomerNavBar;

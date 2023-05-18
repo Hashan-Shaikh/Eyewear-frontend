@@ -9,6 +9,8 @@ import { useState } from "react";
 //import AdminNavBar from "../UI/AdminNavBar";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import './AddProdToShopPage.css';
+import ShopNavBar from "../UI/ShopNavBar";
 const UpdateProdPage = () => {
     const [oldProd, setOldProd] = useState('');
     const [productName, setName] = useState('');
@@ -33,32 +35,33 @@ const UpdateProdPage = () => {
     }
     return (
         <ShopProtected>
-            <Form onSubmit={submitProd}>
+            <ShopNavBar />
+            <Form className="form-container-11" onSubmit={submitProd}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Old Product name</Form.Label>
-                    <Form.Control type="o" placeholder="o" value={oldProd}
+                    <Form.Label className="form-label-11">Old Product name</Form.Label>
+                    <Form.Control className="form-control-11" type="o" placeholder="o" value={oldProd}
                         onChange={(o) => setOldProd(o.target.value)} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Product name</Form.Label>
-                    <Form.Control type="name" placeholder="name" value={productName}
+                    <Form.Label className="form-label-11">Product name</Form.Label>
+                    <Form.Control className="form-control-11" type="name" placeholder="name" value={productName}
                         onChange={(n) => setName(n.target.value)} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Quantity</Form.Label>
-                    <Form.Control type="q" placeholder="quantity" value={quan}
+                    <Form.Label className="form-label-11">Quantity</Form.Label>
+                    <Form.Control className="form-control-11" type="q" placeholder="quantity" value={quan}
                         onChange={(q) => setQuan(q.target.value)} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Per Unit Price</Form.Label>
-                    <Form.Control type="p" placeholder="price" value={price}
+                    <Form.Label className="form-label-11">Per Unit Price</Form.Label>
+                    <Form.Control className="form-control-11" type="p" placeholder="price" value={price}
                         onChange={(p) => setPrice(p.target.value)} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button className="submit-btn-11" variant="primary" type="submit">
                     UpdateProd
                 </Button>
             </Form>

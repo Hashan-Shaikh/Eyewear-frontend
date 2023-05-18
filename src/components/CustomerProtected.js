@@ -1,21 +1,20 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { AuthenticateAdmin } from "../store/AdminSlice";
+import { AuthenticateCustomer } from "../store/CustomerSlice";
 import { useEffect } from "react";
 import Spinner from 'react-bootstrap/Spinner';
-const AdminProtected = (props) => {
+const CustomerProtected = (props) => {
     const dispatch = useDispatch();
-    
 
     useEffect(() => {
-        dispatch(AuthenticateAdmin());
+        dispatch(AuthenticateCustomer());
     }, [dispatch]);
-    const isLoggedIn = useSelector(state => state.admin.isLoggedIn);
-    const isLoading = useSelector(state => state.admin.isLoading);
+    const isLoggedIn = useSelector(state => state.customer.isLoggedIn);
+    const isLoading = useSelector(state => state.customer.isLoading);
 
     if (!isLoggedIn && !isLoading) {
-        return <Navigate to="/admin" replace />
+        return <Navigate to="/customer" replace />
     }
     if (isLoggedIn && !isLoading) {
         return props.children;
@@ -29,4 +28,4 @@ const AdminProtected = (props) => {
     }
 }
 
-export default AdminProtected;
+export default CustomerProtected;

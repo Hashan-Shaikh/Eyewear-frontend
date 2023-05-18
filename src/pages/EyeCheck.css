@@ -1,0 +1,58 @@
+/* Styling for the heading */
+.highlighted-heading {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-weight: bold;
+    color: #008000;
+    font-size: 24px;
+    margin-top: 100px;
+  }
+  
+  /* Styling for the paragraph */
+  .description {
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 40vw;
+  }
+  
+  /* Styling for the form container */
+  .fm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for the file input label */
+  .lb {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .lb:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Styling for the category and score containers */
+  .category,
+  .score {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    margin-left: 45vw;
+    font-weight: bold;
+    color: #0a1641;
+  }
+  .label2{
+    margin-right: 3px;
+  }
