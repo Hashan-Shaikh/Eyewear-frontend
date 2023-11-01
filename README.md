@@ -1,3 +1,6 @@
+# Project description
+A multi-store e-commerce website specialising in a wide range of eye-related products, with the added capability of providing deep learning-based cataract disease detection through an integrated eye check-up feature.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
